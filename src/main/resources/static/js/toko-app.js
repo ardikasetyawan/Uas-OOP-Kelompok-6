@@ -1,0 +1,1 @@
+var tokoApp = angular.module('TokoApp', []);

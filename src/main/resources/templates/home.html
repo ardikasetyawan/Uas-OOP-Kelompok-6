@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Daftar Buku Toko Buku</title>
+
+        <script src="./js/angular.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+        <script src="./js/toko-app.js"></script>
+        <script src="./js/daftar-controller.js"></script>
+    </head>
+    <body class="container">
+        <div class="jumbotron">
+            <h1>DAFTAR BUKU TOKO BUKU</h1>
+        </div>
+        <div ng-app="TokoApp">
+            <div ng-controller="DaftarController">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>JUDUL BUKU</th>
+                            <th>HARGA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="tokoBuku in daftarToko">
+                            <td>{{ tokoBuku.id }}</td>
+                            <td>{{ tokoBuku.judul_buku }}</td>
+                            <td>{{ tokoBuku.harga }}</td>
+                            <td>
+                                <button class="btn btn-warning"
+                                        ng-click="edit(tokoBuku)">
+                                    Ubah
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="delete(tokoBuku)"> Hapus </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary" ng-click="tambah()">Tambah</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

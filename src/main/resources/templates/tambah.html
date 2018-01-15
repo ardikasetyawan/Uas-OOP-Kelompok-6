@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Form Tambah Data BUKU</title>
+
+        <script src="./js/angular.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+        <script src="./js/toko-app.js"></script>
+        <script src="./js/tambah-controller.js"></script>
+    </head>
+    <body class="container" ng-app="TokoApp">
+        <div class="jumbotron">
+            <h1>TAMBAH DATA BUKU</h1>
+        </div>
+
+        <div ng-controller="TambahController">
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">ID</label>
+                    <input type="text" class="col-sm-4 form-control"
+                            placeholder="ID" ng-model="tokoBuku.id" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">JUDUL BUKU</label>
+                    <input type="text" class="col-sm-4 form-control" 
+                            placeholder="JUDUL BUKU" ng-model="tokoBuku.judul_buku" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">HARGA</label>
+                    <input type="text" class="col-sm-4 form-control" 
+                            placeholder="HARGA" ng-model="tokoBuku.harga" />
+                </div>
+                <div class="form-group row">
+                    <button class="btn btn-primary col-pr-2" ng-click="simpan()">
+                        Simpan
+                    </button>
+                    <button class="btn btn-warning col-sm-2" ng-click="batal()">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
